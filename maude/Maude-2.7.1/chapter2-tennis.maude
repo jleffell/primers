@@ -1,0 +1,63 @@
+*************************************************************************
+***  Chapter 2 - Functional Modules
+***	Section 5 : Operator and Statement Attributes
+***
+***  TENNIS : illustrates the use of prec and gather flags with the
+***	non-associative versus operator.
+***
+*************************************************************************
+
+fmod TENNIS is
+
+   sort Player .
+
+   op _vs_ : Player Player -> Player [comm prec 33 gather (e E)] .
+   op _murders_ : Player Player -> Player [prec 31] .
+   op _teases_ : Player Player -> Player [prec 34] .
+
+   ops sampras agassi roddick : -> Player [ctor] .
+
+   vars P1 P2 : Player .
+
+   eq sampras vs agassi = sampras .
+   eq sampras vs roddick = roddick .
+   eq agassi vs roddick = agassi .
+
+   eq P1 murders P2 = P1 .
+   eq P1 teases P2 = P2 murders P1 .
+
+endfm
+
+*************************************************************************
+***  Chapter 2 - Functional Modules
+***	Section 5 : Operator and Statement Attributes
+***
+***  TENNIS-2 : my interprettaion of what they described
+***	            they did not detail the P1 "murders"/"teases" P2 eqs
+***             and also changed the "vs" eqs
+***
+*************************************************************************
+
+fmod TENNIS-2 is
+
+    sorts Player .
+
+    op _vs2_ : Player Player -> Player [comm prec 33 gather (e E)] .
+    op _murders2_ : Player Player -> Player [comm prec 32] .
+    op _teases2_ : Player Player -> Player [comm prec 34] .
+
+    ops sampras agassi roddick : -> Player [ctor] .
+
+    eq roddick vs2 agassi = roddick .
+    eq agassi vs2 sampras = agassi .
+    eq sampras vs2 roddick = sampras .
+
+    eq roddick murders2 agassi = roddick .
+    eq agassi murders2 sampras = agassi .
+    eq sampras murders2 roddick = sampras .
+
+    eq roddick teases2 agassi = roddick .
+    eq agassi teases2 sampras = agassi .
+    eq sampras teases2 roddick = sampras .
+
+endfm
