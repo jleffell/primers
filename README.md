@@ -1,4 +1,4 @@
-Repository for learning new languages
+Repository for learning new languages and tools
 =
 
 ## Maude
