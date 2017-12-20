@@ -9,7 +9,9 @@ Working through examples from [Programming in Standard ML](http://www.cs.cmu.edu
 [Standard ML of New Jersey](https://www.smlnj.org/). I found [this](https://www.youtube.com/watch?v=2sqjUWGGzTo) YouTube series from Reykjavik University particularly helpful.
 
 ## Scheme
-Working through [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/) by Abelson, Sussman and Sussman
+Working through [Structure and Interpretation of Computer Programs][sicp] by Abelson, Sussman and Sussman
+
+[sicp]: https://mitpress.mit.edu/sicp/]
 
 ## [dReal](http://dreal.github.io/)
 [An SMT solver for nonlinear theories over the reals](http://www.cs.cmu.edu/~sicung/papers/dReal.pdf).
