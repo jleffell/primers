@@ -12,4 +12,4 @@ Working through examples from [Programming in Standard ML](http://www.cs.cmu.edu
 Working through [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/) by Abelson, Sussman and Sussman
 
 ## [dReal](http://dreal.github.io/)
-[An SMT solver nonlinear theories over the reals](http://www.cs.cmu.edu/~sicung/papers/dReal.pdf).
+[An SMT solver for nonlinear theories over the reals](http://www.cs.cmu.edu/~sicung/papers/dReal.pdf).
