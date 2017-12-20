@@ -10,13 +10,13 @@ Repository for learning new languages and tools
 [dReal4]: https://github.com/dreal/dreal4
 
 ## Maude
-Working examples from the [primer][primer_url] and [tutorial][tutorial_url]
+Working examples from the [primer][primer_url] and [tutorial][tutorial_url].
 
 [primer_url]: http://maude.cs.uiuc.edu/primer/maude-primer.pdf
 [tutorial_url]: http://maude.cs.uiuc.edu/maude1/tutorial/
 
 ## Scheme
-Working through [Structure and Interpretation of Computer Programs][sicp] by Abelson, Sussman and Sussman
+Working through [Structure and Interpretation of Computer Programs][sicp] by Abelson, Sussman and Sussman.
 
 [sicp]: https://mitpress.mit.edu/sicp/
 
