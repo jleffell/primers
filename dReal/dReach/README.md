@@ -16,7 +16,7 @@ dReal --visualize bouncing_ball_10_0.smt2
 Then visualize the ODE following instructions on the **dReal** [GitHub page][github_page]. Note: I have copied it below
 for reference:
 
-[github_page]: https://github.com/dreal/dreal3/blob/master/doc/ode-visualization.md] 
+[github_page]: https://github.com/dreal/dreal3/blob/master/doc/ode-visualization.md 
 
 - Copy the generated ``.json`` file to  ``dreal/tools/ODE_visualization`` directory, renaming it to
     ``data.json``.
