@@ -1,4 +1,5 @@
 dReach
+=========================
 
 **dReach** takes in a hybrid system description (.drh) and unrolling bound *k*, and performs bounded model-checking.
 
@@ -11,10 +12,11 @@ After running, **dReach**, run **dReal**:
 ````
 dReal --visualize bouncing_ball_10_0.smt2
 ````
-
-Then visualize the ODE following instructions on the **dReal** [GitHub page][github_page]
-[github_page: https://github.com/dreal/dreal3/blob/master/doc/ode-visualization.md] but I have copied it below
+.
+Then visualize the ODE following instructions on the **dReal** [GitHub page][github_page]. Note: I have copied it below
 for reference:
+
+[github_page]: https://github.com/dreal/dreal3/blob/master/doc/ode-visualization.md] 
 
 - Copy the generated ``.json`` file to  ``dreal/tools/ODE_visualization`` directory, renaming it to
     ``data.json``.
@@ -36,10 +38,7 @@ for reference:
     google-chrome http://localhost:8000
 ````
 
-Customizing Visualization
-=========================
-
-By modifying [tools/ODE_visualization/index.html](/tools/ODE_visualization/index.html) file, you can customize the visualization:
+You can customize the visualization by modifying the [tools/ODE_visualization/index.html](/tools/ODE_visualization/index.html) file:
 
 ````js
 var config = {
