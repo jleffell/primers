@@ -1,3 +1,4 @@
+(* Question 1 *)
 fun is_older(date_1 : int * int * int, date_2 : int * int * int) =
     if (date_1 = date_2) then false else
         if (#1 date_1, #2 date_1) = (#1 date_2, #2 date_2) andalso (#3 date_1 > #3 date_2) then false else
@@ -16,6 +17,7 @@ fun is_older2(date_1 : int * int * int, date_2 : int * int * int) =
         date_sum date_1 < date_sum date_2
     end
 
+(* Question 2 *)
 fun number_in_month(dates : (int * int * int) list, month : int) =
     if null dates then 0 else
         let
@@ -27,3 +29,5 @@ fun number_in_month(dates : (int * int * int) list, month : int) =
 fun number_in_month2(dates : (int * int * int) list, month : int) =
     if null dates then 0 else
         number_in_month2(tl dates, month) + (if #2 (hd dates) = month then 1 else 0)
+
+(* Question 3 *)
