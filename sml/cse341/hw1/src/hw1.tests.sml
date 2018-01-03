@@ -5,6 +5,19 @@ fun test_output(result : bool) =
     if null results then print "Results Complete"
     else print(hd results) *)
 
+(*)    val strings = "";
+    val strings = "" : string
+    - val strings = strings ^ s1;
+    val strings = "this is one\n" : string
+    - val strings = strings ^ s2;
+    val strings = "this is one\nthis is two\n" : string
+    - print(strings)
+    = ;
+    this is one
+    this is two
+    val it = () : unit
+*)
+
 (* Question 1: fun is_older *)
 print "Question 1: \n";
 (* I added is_older2 because I am not sure what the preferred approach is *)
@@ -54,3 +67,13 @@ number_in_month2(list_of_dates, 6) = 0 andalso
 number_in_month2([], 12) = 0 andalso
 number_in_month2(list_of_dates, 1) = 2;
 print("The function number_in_month2 " ^ (test_output number_in_month2_test) ^ "\n");
+
+(* Question 3 *)
+val list_of_months = [1,12];
+val number_in_months_test =
+number_in_months(list_of_dates, list_of_months) = 3 andalso
+number_in_months(list_of_dates, []) = 0 andalso
+number_in_months(list_of_dates, [1]) = 2 andalso
+number_in_months(list_of_dates, [12]) = 1 andalso
+number_in_months(list_of_dates, [5]) = 0;
+print("The function number_in_months " ^ (test_output number_in_months_test) ^ "\n");
