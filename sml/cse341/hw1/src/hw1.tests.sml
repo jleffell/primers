@@ -176,3 +176,11 @@ what_month 32 = 2 andalso
 what_month 59 = 2 andalso
 what_month 60 = 3;
 print("The function what_month " ^ (test_output what_month_test) ^ "\n");
+
+(* Question 10 *)
+val month_range_test =
+month_range(1, 4) = [1,1,1,1] andalso
+month_range(4, 1) = [] andalso
+month_range(30, 32) = [1,1,2] andalso
+month_range(364, 365) = [12, 12];
+print("The function month_range " ^ (test_output month_range_test) ^ "\n");
