@@ -12,6 +12,12 @@ is_older (date_1, date_2) = true;
 is_older (date_1, date_1) = false;
 is_older (date_2, date_1) = false;
 
+is_older (date_3, date_4) = true;
+is_older (date_4, date_3) = false;
+
+is_older (date_5, date_6) = true;
+is_older (date_6, date_5) = false;
+
 is_older2 (date_1, date_2) = true;
 is_older2 (date_1, date_1) = false;
 is_older2 (date_2, date_1) = false;
@@ -21,3 +27,16 @@ is_older2 (date_4, date_3) = false;
 
 is_older2 (date_5, date_6) = true;
 is_older2 (date_6, date_5) = false;
+
+(* Question 2: fun number_in_month *)
+val list_of_dates = [date_1, date_2, date_3, date_4, date_5, date_6];
+
+number_in_month(list_of_dates, 12) = 1;
+number_in_month(list_of_dates, 6) = 0;
+number_in_month([], 12) = 0;
+number_in_month(list_of_dates, 1) = 2;
+
+number_in_month2(list_of_dates, 12) = 1;
+number_in_month2(list_of_dates, 6) = 0;
+number_in_month2([], 12) = 0;
+number_in_month2(list_of_dates, 1) = 2;

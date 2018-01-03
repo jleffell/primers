@@ -15,3 +15,15 @@ fun is_older2(date_1 : int * int * int, date_2 : int * int * int) =
     in
         date_sum date_1 < date_sum date_2
     end
+
+fun number_in_month(dates : (int * int * int) list, month : int) =
+    if null dates then 0 else
+        let
+            val partial = number_in_month (tl dates, month)
+        in
+            if #2 (hd dates) = month then 1 + partial else partial
+        end
+
+fun number_in_month2(dates : (int * int * int) list, month : int) =
+    if null dates then 0 else
+        number_in_month2(tl dates, month) + (if #2 (hd dates) = month then 1 else 0)
