@@ -39,6 +39,7 @@ is_older (date_5, date_6) = true andalso
 is_older (date_6, date_5) = false;
 print("The function is_older " ^ (test_output is_older_test) ^ "\n");
 
+(*
 val is_older_alt_test =
 is_older_alt (date_1, date_2) = true andalso
 is_older_alt (date_1, date_1) = false andalso
@@ -48,27 +49,29 @@ is_older_alt (date_4, date_3) = false andalso
 is_older_alt (date_5, date_6) = true andalso
 is_older_alt (date_6, date_5) = false;
 print("The function is_older_alt " ^ (test_output is_older_alt_test) ^ "\n");
+*)
 
 (* Question 2: fun number_in_month *)
 print "Question 2: \n";
 val list_of_dates = [date_1, date_2, date_3, date_4, date_5, date_6];
 
 val number_in_month_test =
-number_in_month_alt(list_of_dates, 1) = 2 andalso
-number_in_month_alt(list_of_dates, 2) = 0 andalso
-number_in_month_alt(list_of_dates, 3) = 1 andalso
-number_in_month_alt(list_of_dates, 4) = 1 andalso
-number_in_month_alt(list_of_dates, 5) = 0 andalso
-number_in_month_alt(list_of_dates, 6) = 0 andalso
-number_in_month_alt(list_of_dates, 7) = 0 andalso
-number_in_month_alt(list_of_dates, 8) = 0 andalso
-number_in_month_alt(list_of_dates, 9) = 1 andalso
-number_in_month_alt(list_of_dates, 10) = 0 andalso
-number_in_month_alt(list_of_dates, 11) = 0 andalso
-number_in_month_alt(list_of_dates, 12) = 1 andalso
-number_in_month_alt([], 12) = 0;
+number_in_month(list_of_dates, 1) = 2 andalso
+number_in_month(list_of_dates, 2) = 0 andalso
+number_in_month(list_of_dates, 3) = 1 andalso
+number_in_month(list_of_dates, 4) = 1 andalso
+number_in_month(list_of_dates, 5) = 0 andalso
+number_in_month(list_of_dates, 6) = 0 andalso
+number_in_month(list_of_dates, 7) = 0 andalso
+number_in_month(list_of_dates, 8) = 0 andalso
+number_in_month(list_of_dates, 9) = 1 andalso
+number_in_month(list_of_dates, 10) = 0 andalso
+number_in_month(list_of_dates, 11) = 0 andalso
+number_in_month(list_of_dates, 12) = 1 andalso
+number_in_month([], 12) = 0;
 print("The function number_in_month " ^ (test_output number_in_month_test) ^ "\n");
 
+(* )
 val number_in_month_alt_test =
 number_in_month_alt(list_of_dates, 1) = 2 andalso
 number_in_month_alt(list_of_dates, 2) = 0 andalso
@@ -84,6 +87,7 @@ number_in_month_alt(list_of_dates, 11) = 0 andalso
 number_in_month_alt(list_of_dates, 12) = 1 andalso
 number_in_month_alt([], 12) = 0;
 print("The function number_in_month_alt " ^ (test_output number_in_month_alt_test) ^ "\n");
+*)
 
 (* Question 3 *)
 val list_of_months = [1,12];
@@ -128,3 +132,12 @@ dates_in_months([], [1,2,3]) = [] andalso
 dates_in_months(list_of_dates, []) = [] andalso
 dates_in_months(list_of_dates, [2,5,6,7,8,10,11]) = [];
 print("The function dates_in_months " ^ (test_output dates_in_months_test) ^ "\n");
+
+(* Question 6 *)
+val strings = ["a","b","c"];
+
+val get_nth_test =
+get_nth(strings, 1) = "a" andalso
+get_nth(strings, 2) = "b" andalso
+get_nth(strings, 3) = "c";
+print("The function get_nth " ^ (test_output get_nth_test) ^ "\n");
