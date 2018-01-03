@@ -1,23 +1,6 @@
 fun test_output(result : bool) =
     if result then "passes" else "fails";
 
-(* fun print_results(results : string list) =
-    if null results then print "Results Complete"
-    else print(hd results) *)
-
-(*)    val strings = "";
-    val strings = "" : string
-    - val strings = strings ^ s1;
-    val strings = "this is one\n" : string
-    - val strings = strings ^ s2;
-    val strings = "this is one\nthis is two\n" : string
-    - print(strings)
-    = ;
-    this is one
-    this is two
-    val it = () : unit
-*)
-
 (* Question 1: fun is_older *)
 print "Question 1: \n";
 (* I added is_older_alt because I am not sure what the preferred approach is *)
@@ -28,6 +11,7 @@ val date_3 = (2017, 12, 31);
 val date_4 = (2018, 1, 1);
 val date_5 = (2017, 3, 31);
 val date_6 = (2018, 4, 1);
+val date_7 = (1776, 7, 4);
 
 val is_older_test =
 is_older (date_1, date_2) = true andalso
@@ -71,7 +55,7 @@ number_in_month(list_of_dates, 12) = 1 andalso
 number_in_month([], 12) = 0;
 print("The function number_in_month " ^ (test_output number_in_month_test) ^ "\n");
 
-(* )
+(*
 val number_in_month_alt_test =
 number_in_month_alt(list_of_dates, 1) = 2 andalso
 number_in_month_alt(list_of_dates, 2) = 0 andalso
@@ -184,3 +168,19 @@ month_range(4, 1) = [] andalso
 month_range(30, 32) = [1,1,2] andalso
 month_range(364, 365) = [12, 12];
 print("The function month_range " ^ (test_output month_range_test) ^ "\n");
+
+(* Question 11 *)
+val oldest_test =
+oldest([date_1, date_2]) = SOME date_1 andalso
+oldest([date_1, date_1]) = SOME date_1 andalso
+oldest([date_1, date_2, date_3, date_4, date_5, date_6, date_7]) = SOME date_7 andalso
+oldest([]) = NONE;
+print("The function oldest " ^ (test_output oldest_test) ^ "\n");
+
+(*
+val oldest_alt_test =
+oldest_alt([date_1, date_2]) = SOME date_1 andalso
+oldest_alt([date_1, date_1]) = SOME date_1 andalso
+oldest_alt([]) = NONE;
+print("The function oldest_alt " ^ (test_output oldest_alt_test) ^ "\n");
+*)

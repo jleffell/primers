@@ -5,7 +5,8 @@ fun is_older(date_1 : int * int * int, date_2 : int * int * int) =
             if (#1 date_1 = #1 date_2) andalso (#2 date_1 > #2 date_2) then false else
                 if (#1 date_1 > #1 date_2) then false else true
 
-(* fun is_older_alt(date_1 : int * int * int, date_2 : int * int * int) =
+(*
+fun is_older_alt(date_1 : int * int * int, date_2 : int * int * int) =
     let fun date_sum(date : int * int * int) =
         let
             val max_months = 12
@@ -27,7 +28,8 @@ fun number_in_month(dates : (int * int * int) list, month : int) =
             if #2 (hd dates) = month then 1 + partial else partial
         end
 
-(* fun number_in_month_alt(dates : (int * int * int) list, month : int) =
+(*
+fun number_in_month_alt(dates : (int * int * int) list, month : int) =
     if null dates then 0 else
         number_in_month_alt(tl dates, month) + (if #2 (hd dates) = month then 1 else 0)
 *)
@@ -58,7 +60,8 @@ fun get_nth(strings : string list, n : int) =
 (* Question 7 *)
 fun date_to_string(date : int * int * int) =
     let
-        val months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        val months = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"]
     in
         get_nth(months, #2 date) ^ "-" ^ (Int.toString (#3 date)) ^ "-" ^ (Int.toString (#1 date))
     end
@@ -82,3 +85,38 @@ fun what_month(day : int) =
 (* Question 10 *)
 fun month_range(day1 : int, day2: int) =
     if day1 > day2 then [] else (what_month day1)::month_range(day1 + 1, day2)
+
+(* Question 11 - very similar to better_max in Lecture 3 Notes by Dan Grossman, Autumn 2017 *)
+fun oldest(dates : (int * int * int) list) =
+    if null dates
+    then NONE
+    else
+        let val tl_ans = oldest(tl dates)
+        in
+            if isSome tl_ans
+                andalso is_older(valOf tl_ans, hd dates)
+            then tl_ans
+            else SOME (hd dates)
+        end
+
+(* As a matter of style might prefer not to do so much "valOf" in the recursion - DG, Lecture 3 Notes *)
+
+(*
+fun oldest_alt(dates : (int * int * int) list) =
+    if null dates
+    then NONE
+    else let (* ok to assume nonempty b/c local *)
+            fun oldest_nonempty (dates : (int * int * int) list) =
+                if null (tl dates)
+                then hd dates
+                else
+                    let val tl_ans = oldest_nonempty(tl dates)
+                    in
+                        if is_older(tl_ans, hd dates)
+                        then tl_ans
+                        else hd dates
+                    end
+        in
+            SOME (oldest_nonempty dates)
+        end
+*)
