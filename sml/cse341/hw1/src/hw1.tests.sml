@@ -143,12 +143,6 @@ get_nth(strings, 3) = "c";
 print("The function get_nth " ^ (test_output get_nth_test) ^ "\n");
 
 (* Question 7 *)
-(* val date_1 = (2016, 9, 26)
-val date_2 = (2018, 1, 2);
-val date_3 = (2017, 12, 31);
-val date_4 = (2018, 1, 1);
-val date_5 = (2017, 3, 31);
-val date_6 = (2018, 4, 1); *)
 val date_to_string_test =
 date_to_string(date_1) = "September-26-2016" andalso
 date_to_string(date_2) = "January-2-2018" andalso
@@ -157,3 +151,19 @@ date_to_string(date_4) = "January-1-2018" andalso
 date_to_string(date_5) = "March-31-2017" andalso
 date_to_string(date_6) = "April-1-2018";
 print("The function date_to_string " ^ (test_output date_to_string_test) ^ "\n");
+
+(* Question 8 *)
+val nums = [1, 2, 3, 4];
+
+val number_before_reaching_sum_test =
+number_before_reaching_sum(0, nums) = 0 andalso
+number_before_reaching_sum(1, nums) = 0 andalso
+number_before_reaching_sum(2, nums) = 1 andalso
+number_before_reaching_sum(3, nums) = 1 andalso
+number_before_reaching_sum(4, nums) = 2 andalso
+number_before_reaching_sum(5, nums) = 2 andalso
+number_before_reaching_sum(6, nums) = 2 andalso
+number_before_reaching_sum(7, nums) = 3 andalso
+number_before_reaching_sum(8, nums) = 3 andalso
+number_before_reaching_sum(9, nums) = 3;
+print("The function number_before_reaching_sum " ^ (test_output number_before_reaching_sum_test) ^ "\n");
