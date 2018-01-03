@@ -120,3 +120,11 @@ dates_in_month(list_of_dates, 10) = [] andalso
 dates_in_month(list_of_dates, 11) = [] andalso
 dates_in_month(list_of_dates, 12) = [(2017, 12, 31)];
 print("The function dates_in_month " ^ (test_output dates_in_month_test) ^ "\n");
+
+(* Question 5 *)
+val dates_in_months_test =
+dates_in_months(list_of_dates, [1,2,3]) = [(2018, 1, 2),(2018, 1, 1),(2017, 3, 31)] andalso
+dates_in_months([], [1,2,3]) = [] andalso
+dates_in_months(list_of_dates, []) = [] andalso
+dates_in_months(list_of_dates, [2,5,6,7,8,10,11]) = [];
+print("The function dates_in_months " ^ (test_output dates_in_months_test) ^ "\n");

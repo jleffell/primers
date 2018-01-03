@@ -43,3 +43,8 @@ fun dates_in_month(dates : (int * int * int) list, month : int) =
         in
             if #2 (hd dates) = month then (hd dates) :: rem else rem
         end
+
+(* Question 5 *)
+fun dates_in_months(dates : (int * int * int) list, months : int list) =
+    if null months then [] else
+        dates_in_month(dates, hd months) @ dates_in_months(dates, tl months)
