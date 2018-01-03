@@ -70,3 +70,11 @@ fun number_before_reaching_sum(sum : int, nums : int list) =
     in
         if num < sum then 1 + number_before_reaching_sum(sum - num, tl nums) else 0
     end
+
+(* Question 9 *)
+fun what_month(day : int) =
+    let
+        val days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    in
+        number_before_reaching_sum(day, days_in_month) + 1
+    end

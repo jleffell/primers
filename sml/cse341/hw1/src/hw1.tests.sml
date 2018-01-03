@@ -167,3 +167,12 @@ number_before_reaching_sum(7, nums) = 3 andalso
 number_before_reaching_sum(8, nums) = 3 andalso
 number_before_reaching_sum(9, nums) = 3;
 print("The function number_before_reaching_sum " ^ (test_output number_before_reaching_sum_test) ^ "\n");
+
+(* Question 9 *)
+val what_month_test =
+what_month 1 = 1 andalso
+what_month 31 = 1 andalso
+what_month 32 = 2 andalso
+what_month 59 = 2 andalso
+what_month 60 = 3;
+print("The function what_month " ^ (test_output what_month_test) ^ "\n");
