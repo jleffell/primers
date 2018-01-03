@@ -5,7 +5,7 @@ fun is_older(date_1 : int * int * int, date_2 : int * int * int) =
             if (#1 date_1 = #1 date_2) andalso (#2 date_1 > #2 date_2) then false else
                 if (#1 date_1 > #1 date_2) then false else true
 
-fun is_older2(date_1 : int * int * int, date_2 : int * int * int) =
+fun is_older_alt(date_1 : int * int * int, date_2 : int * int * int) =
     let fun date_sum(date : int * int * int) =
         let
             val max_months = 12
@@ -26,9 +26,9 @@ fun number_in_month(dates : (int * int * int) list, month : int) =
             if #2 (hd dates) = month then 1 + partial else partial
         end
 
-fun number_in_month2(dates : (int * int * int) list, month : int) =
+fun number_in_month_alt(dates : (int * int * int) list, month : int) =
     if null dates then 0 else
-        number_in_month2(tl dates, month) + (if #2 (hd dates) = month then 1 else 0)
+        number_in_month_alt(tl dates, month) + (if #2 (hd dates) = month then 1 else 0)
 
 (* Question 3 *)
 fun number_in_months(dates : (int * int * int) list, months : int list) =
