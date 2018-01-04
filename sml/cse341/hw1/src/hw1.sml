@@ -21,7 +21,9 @@ fun is_older_alt(date_1 : int * int * int, date_2 : int * int * int) =
 
 (* Question 2 *)
 fun number_in_month(dates : (int * int * int) list, month : int) =
-    if null dates then 0 else
+    if null dates
+    then 0
+    else
         let
             val partial = number_in_month (tl dates, month)
         in
@@ -36,12 +38,15 @@ fun number_in_month_alt(dates : (int * int * int) list, month : int) =
 
 (* Question 3 *)
 fun number_in_months(dates : (int * int * int) list, months : int list) =
-    if null months then 0 else
-        number_in_month(dates, hd months) + number_in_months(dates, tl months)
+    if null months
+    then 0
+    else number_in_month(dates, hd months) + number_in_months(dates, tl months)
 
 (* Question 4 *)
 fun dates_in_month(dates : (int * int * int) list, month : int) =
-    if null dates then [] else
+    if null dates
+    then []
+    else
         let
             val rem = dates_in_month(tl dates, month)
         in
@@ -50,8 +55,7 @@ fun dates_in_month(dates : (int * int * int) list, month : int) =
 
 (* Question 5 *)
 fun dates_in_months(dates : (int * int * int) list, months : int list) =
-    if null months then [] else
-        dates_in_month(dates, hd months) @ dates_in_months(dates, tl months)
+    if null months then [] else dates_in_month(dates, hd months) @ dates_in_months(dates, tl months)
 
 (* Question 6 *)
 fun get_nth(strings : string list, n : int) =
@@ -100,7 +104,6 @@ fun oldest(dates : (int * int * int) list) =
         end
 
 (* As a matter of style might prefer not to do so much "valOf" in the recursion - DG, Lecture 3 Notes *)
-
 (*
 fun oldest_alt(dates : (int * int * int) list) =
     if null dates
@@ -122,14 +125,38 @@ fun oldest_alt(dates : (int * int * int) list) =
 *)
 
 fun cumulative_sum(nums : int list) =
-    let
-        fun push_cumulative(x : int, xs : int list) =
-            (x + (hd xs)) :: (tl xs)
-    in
         if null nums
         then []
         else
             if null (tl nums)
             then [hd nums]
-            else (hd nums)::(cumulative_sum(push_cumulative(hd nums, tl nums)))
-    end
+            else
+                let
+                    fun push_cumulative(x : int, xs : int list) = (x + (hd xs)) :: (tl xs)
+                in
+                    (hd nums)::(cumulative_sum(push_cumulative(hd nums, tl nums)))
+                end
+
+(* Challenge Question 13 *)
+fun remove_duplicates(nums : int list) =
+    if null nums then [] else
+        if null (tl nums)
+        then [hd nums]
+        else
+            let
+                fun append_unique(x: int, xs : int list) =
+                    if null xs then [] else
+                        if null (tl xs)
+                        then
+                            if x = (hd xs) then [] else [hd xs]
+                        else
+                            if x = (hd xs) then append_unique(x, tl xs) else (hd xs)::append_unique(x, tl xs)
+            in
+                (hd nums)::remove_duplicates(append_unique(hd nums, tl nums))
+            end
+
+fun number_in_months_challenge(dates : (int * int * int) list, months : int list) =
+    number_in_months(dates, remove_duplicates(months))
+
+fun dates_in_months_challenge(dates : (int * int * int) list, months : int list) =
+    dates_in_months(dates, remove_duplicates(months))

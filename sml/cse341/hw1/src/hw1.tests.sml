@@ -192,3 +192,14 @@ cumulative_sum([1]) = [1] andalso
 cumulative_sum([1,2]) = [1,3] andalso
 cumulative_sum([1,2,3,4]) = [1,3,6,10];
 print("The function cumulative_sum " ^ (test_output cumulative_sum_test) ^ "\n");
+
+(* Question 13 *)
+val number_in_months_challenge_test =
+number_in_months(list_of_dates, [1]) = number_in_months_challenge(list_of_dates, [1,1,1]) andalso
+number_in_months(list_of_dates, [1,2,3]) = number_in_months_challenge(list_of_dates, [1,2,1,3,1,1,2,2,3]);
+print("The function number_in_months_challenge " ^ (test_output number_in_months_challenge_test) ^ "\n");
+
+val dates_in_months_challenge_test =
+dates_in_months(list_of_dates, [1]) = dates_in_months_challenge(list_of_dates, [1,1,1]) andalso
+dates_in_months(list_of_dates, [1,2,3]) = dates_in_months_challenge(list_of_dates, [1,2,1,3,1,1,2,2,3]);
+print("The function dates_in_months_challenge " ^ (test_output dates_in_months_challenge_test) ^ "\n");
