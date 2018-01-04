@@ -24,9 +24,11 @@ Working through [Structure and Interpretation of Computer Programs][sicp] by Abe
 [sicp]: https://mitpress.mit.edu/sicp/
 
 ## [Standard ML (Standard Meta Language)][my_sml]
-Working through examples from [Programming in Standard ML][progML] using [Standard ML of New Jersey][SMLNJ]. I found [this][SMLRU] YouTube series from Reykjavik University particularly helpful.
+Working through examples from [Programming in Standard ML][progML] using [Standard ML of New Jersey][SMLNJ]. I found [this][SMLRU] YouTube series from Reykjavik University particularly helpful. I am also working through the assigments from the University of Washington [CSE341: Programming Languages][cse341_url] course taught by Professor Dan Grossman [here][my_cse341].
 
 [my_sml]: https://github.com/jleffell/primers/tree/master/sml
 [progML]: http://www.cs.cmu.edu/~rwh/isml/book.pdf
 [SMLNJ]: https://www.smlnj.org/
 [SMLRU]: https://www.youtube.com/watch?v=2sqjUWGGzTo
+[cse341_url]: https://courses.cs.washington.edu/courses/cse341/17au/
+[my_cse341]: https://github.com/jleffell/primers/tree/master/sml/cse341
