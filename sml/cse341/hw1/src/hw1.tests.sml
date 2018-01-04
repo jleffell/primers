@@ -184,3 +184,11 @@ oldest_alt([date_1, date_1]) = SOME date_1 andalso
 oldest_alt([]) = NONE;
 print("The function oldest_alt " ^ (test_output oldest_alt_test) ^ "\n");
 *)
+
+(* Question 12 *)
+val cumulative_sum_test =
+cumulative_sum([]) = [] andalso
+cumulative_sum([1]) = [1] andalso
+cumulative_sum([1,2]) = [1,3] andalso
+cumulative_sum([1,2,3,4]) = [1,3,6,10];
+print("The function cumulative_sum " ^ (test_output cumulative_sum_test) ^ "\n");

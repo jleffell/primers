@@ -120,3 +120,16 @@ fun oldest_alt(dates : (int * int * int) list) =
             SOME (oldest_nonempty dates)
         end
 *)
+
+fun cumulative_sum(nums : int list) =
+    let
+        fun push_cumulative(x : int, xs : int list) =
+            (x + (hd xs)) :: (tl xs)
+    in
+        if null nums
+        then []
+        else
+            if null (tl nums)
+            then [hd nums]
+            else (hd nums)::(cumulative_sum(push_cumulative(hd nums, tl nums)))
+    end
