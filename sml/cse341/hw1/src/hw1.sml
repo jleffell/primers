@@ -160,3 +160,40 @@ fun number_in_months_challenge(dates : (int * int * int) list, months : int list
 
 fun dates_in_months_challenge(dates : (int * int * int) list, months : int list) =
     dates_in_months(dates, remove_duplicates(months))
+
+
+
+(* Challenge Question 14 *)
+
+(* Extract nth element from egenric list *)
+fun get_nth_gen(xs, n : int) =
+    if n = 1 then (hd xs) else get_nth_gen(tl xs, n - 1)
+
+fun reasonable_date(date : int * int * int) =
+    let
+        val day = #1 date
+        val month = #2 date
+        val year = #3 date
+
+        fun leap_year(year : int) =
+            year mod 400 = 0 orelse (year mod 4 = 0 andalso year mod 100 <> 0)
+
+        fun days_per_month(year : int) =
+            if leap_year(year)
+            then [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+            else [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+        fun days_in_month(month : int, year : int) =
+            get_nth_gen(days_per_month(year), month)
+
+    in
+        if year < 1
+        then false
+        else
+            if month < 1 orelse month > 12
+            then false
+            else
+                if day < 1 orelse day > days_in_month(month, year)
+                then false
+                else true
+    end

@@ -193,7 +193,7 @@ cumulative_sum([1,2]) = [1,3] andalso
 cumulative_sum([1,2,3,4]) = [1,3,6,10];
 print("The function cumulative_sum " ^ (test_output cumulative_sum_test) ^ "\n");
 
-(* Question 13 *)
+(* Challenge Question 13 *)
 val number_in_months_challenge_test =
 number_in_months(list_of_dates, [1]) = number_in_months_challenge(list_of_dates, [1,1,1]) andalso
 number_in_months(list_of_dates, [1,2,3]) = number_in_months_challenge(list_of_dates, [1,2,1,3,1,1,2,2,3]);
@@ -203,3 +203,21 @@ val dates_in_months_challenge_test =
 dates_in_months(list_of_dates, [1]) = dates_in_months_challenge(list_of_dates, [1,1,1]) andalso
 dates_in_months(list_of_dates, [1,2,3]) = dates_in_months_challenge(list_of_dates, [1,2,1,3,1,1,2,2,3]);
 print("The function dates_in_months_challenge " ^ (test_output dates_in_months_challenge_test) ^ "\n");
+
+(* Challenge Question 14 *)
+val reasonable_date_test =
+reasonable_date(2,1,1983) = true andalso
+reasonable_date(32,1,1983) = false andalso
+reasonable_date(31,1,1983) = true andalso
+reasonable_date(1,32,1983) = false andalso
+reasonable_date(~31,1,1983) = false andalso
+reasonable_date(31,~1,1983) = false andalso
+reasonable_date(31,1,~1983) = false andalso
+reasonable_date(28,2,1983) = true andalso
+reasonable_date(29,2,1983) = false andalso
+reasonable_date(29,2,1904) = true andalso
+reasonable_date(4,7,1776) = true andalso
+reasonable_date(0,7,1776) = false andalso
+reasonable_date(4,0,1776) = false andalso
+reasonable_date(4,7,0) = false;
+print("The function reasonable_date " ^ (test_output reasonable_date_test) ^ "\n");
