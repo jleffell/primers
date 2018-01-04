@@ -1,9 +1,9 @@
 (* Question 1 *)
 fun is_older(date_1 : int * int * int, date_2 : int * int * int) =
     if (date_1 = date_2) then false else
-        if (#1 date_1, #2 date_1) = (#1 date_2, #2 date_2) andalso (#3 date_1 > #3 date_2) then false else
-            if (#1 date_1 = #1 date_2) andalso (#2 date_1 > #2 date_2) then false else
-                if (#1 date_1 > #1 date_2) then false else true
+        if (#3 date_1, #2 date_1) = (#3 date_2, #2 date_2) andalso (#1 date_1 > #1 date_2) then false else
+            if (#3 date_1 = #3 date_2) andalso (#2 date_1 > #2 date_2) then false else
+                if (#3 date_1 > #3 date_2) then false else true
 
 (*
 fun is_older_alt(date_1 : int * int * int, date_2 : int * int * int) =
@@ -67,7 +67,7 @@ fun date_to_string(date : int * int * int) =
         val months = ["January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"]
     in
-        get_nth(months, #2 date) ^ "-" ^ (Int.toString (#3 date)) ^ "-" ^ (Int.toString (#1 date))
+        get_nth(months, #2 date) ^ "-" ^ (Int.toString (#1 date)) ^ "-" ^ (Int.toString (#3 date))
     end
 
 (* Question 8 *)
@@ -160,8 +160,6 @@ fun number_in_months_challenge(dates : (int * int * int) list, months : int list
 
 fun dates_in_months_challenge(dates : (int * int * int) list, months : int list) =
     dates_in_months(dates, remove_duplicates(months))
-
-
 
 (* Challenge Question 14 *)
 

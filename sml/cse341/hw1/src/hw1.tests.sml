@@ -5,13 +5,13 @@ fun test_output(result : bool) =
 print "Question 1: \n";
 (* I added is_older_alt because I am not sure what the preferred approach is *)
 
-val date_1 = (2016, 9, 26);
-val date_2 = (2018, 1, 2);
-val date_3 = (2017, 12, 31);
-val date_4 = (2018, 1, 1);
-val date_5 = (2017, 3, 31);
-val date_6 = (2018, 4, 1);
-val date_7 = (1776, 7, 4);
+val date_1 = (26, 9, 2016);
+val date_2 = (2,1,2018);
+val date_3 = (31,12,2017);
+val date_4 = (1,1,2018);
+val date_5 = (31,3,2017);
+val date_6 = (1,4,2018);
+val date_7 = (4,7,1776);
 
 val is_older_test =
 is_older (date_1, date_2) = true andalso
@@ -95,23 +95,23 @@ print("The function number_in_months " ^ (test_output number_in_months_test) ^ "
 
 (* Question 4 *)
 val dates_in_month_test =
-dates_in_month(list_of_dates, 1) = [(2018, 1, 2),(2018, 1, 1)] andalso
+dates_in_month(list_of_dates, 1) = [date_2,date_4] andalso
 dates_in_month(list_of_dates, 2) = [] andalso
-dates_in_month(list_of_dates, 3) = [(2017, 3, 31)] andalso
-dates_in_month(list_of_dates, 4) = [(2018, 4, 1)] andalso
+dates_in_month(list_of_dates, 3) = [date_5] andalso
+dates_in_month(list_of_dates, 4) = [date_6] andalso
 dates_in_month(list_of_dates, 5) = [] andalso
 dates_in_month(list_of_dates, 6) = [] andalso
 dates_in_month(list_of_dates, 7) = [] andalso
 dates_in_month(list_of_dates, 8) = [] andalso
-dates_in_month(list_of_dates, 9) = [(2016, 9, 26)] andalso
+dates_in_month(list_of_dates, 9) = [date_1] andalso
 dates_in_month(list_of_dates, 10) = [] andalso
 dates_in_month(list_of_dates, 11) = [] andalso
-dates_in_month(list_of_dates, 12) = [(2017, 12, 31)];
+dates_in_month(list_of_dates, 12) = [date_3];
 print("The function dates_in_month " ^ (test_output dates_in_month_test) ^ "\n");
 
 (* Question 5 *)
 val dates_in_months_test =
-dates_in_months(list_of_dates, [1,2,3]) = [(2018, 1, 2),(2018, 1, 1),(2017, 3, 31)] andalso
+dates_in_months(list_of_dates, [1,2,3]) = [date_2,date_4,date_5] andalso
 dates_in_months([], [1,2,3]) = [] andalso
 dates_in_months(list_of_dates, []) = [] andalso
 dates_in_months(list_of_dates, [2,5,6,7,8,10,11]) = [];
