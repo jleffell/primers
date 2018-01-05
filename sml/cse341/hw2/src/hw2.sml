@@ -26,8 +26,8 @@ fun dedup xs = ListMergeSort.uniqueSort String.compare xs
 
 (* strcmp : string * string -> order compares strings alphabetically
    where datatype order = LESS | EQUAL | GREATER *)
-val strcmp = String.compare                                        
-                        
+val strcmp = String.compare
+
 (* convert an int to a real *)
 val int_to_real = Real.fromInt
 
@@ -41,11 +41,11 @@ val real_to_string = Real.toString
 val real_is_negative = Real.signBit
 
 (* We now load 3 files with police data represented as values of type json.
-   Each file binds one variable: small_incident_reports (10 reports), 
-   medium_incident_reports (100 reports), and large_incident_reports 
+   Each file binds one variable: small_incident_reports (10 reports),
+   medium_incident_reports (100 reports), and large_incident_reports
    (1000 reports) respectively.
 
-   However, the large file is commented out for now because it will take 
+   However, the large file is commented out for now because it will take
    about 15 seconds to load, which is too long while you are debugging
    earlier problems.  In string format, we have ~10000 records -- if you
    do the challenge problem, you will be able to read in all 10000 quickly --
@@ -61,7 +61,7 @@ use "parsed_small_police.sml";
 use "parsed_medium_police.sml";
 
 (* (* uncomment when you are ready to do the problems needing the large report*)
-use "parsed_large_police.sml"; 
+use "parsed_large_police.sml";
 
 val large_incident_reports_list =
     case large_incident_reports of
@@ -74,12 +74,21 @@ val large_incident_reports_list =
 Control.Print.printLength := 20;
 
 (**** PUT PROBLEMS 1-8 HERE ****)
+fun make_silly_json (i : int) =
+    let
+        fun helper(x : int) =
+            if x = 1
+            then [Object [("n",Num (int_to_real 1)),("b", True)]]
+            else Object [("n", Num (int_to_real x)),("b", True)]::helper(x-1)
+    in
+        Array (helper(i))
+    end
 
-(* histogram and historgram_for_field are provided, but they use your 
-   count_occurrences and string_values_for_field, so uncomment them 
+(* histogram and historgram_for_field are provided, but they use your
+   count_occurrences and string_values_for_field, so uncomment them
    after doing earlier problems *)
 
-(* histogram_for_field takes a field name f and a list of objects js and 
+(* histogram_for_field takes a field name f and a list of objects js and
    returns counts for how often a string is the contents of f in js. *)
 (*
 exception SortIsBroken
@@ -114,4 +123,3 @@ Control.Print.printLength := 20;
 (**** PUT PROBLEMS 16-19 HERE ****)
 
 (* For CHALLENGE PROBLEMS, see hw2challenge.sml *)
-
