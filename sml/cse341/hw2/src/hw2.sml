@@ -76,12 +76,12 @@ Control.Print.printLength := 20;
 (**** PUT PROBLEMS 1-8 HERE ****)
 fun make_silly_json (i : int) =
     let
-        fun helper(x : int) =
+        fun make_silly_json_object(x : int) =
             if x = 1
-            then [Object [("n",Num (int_to_real 1)),("b", True)]]
-            else Object [("n", Num (int_to_real x)),("b", True)]::helper(x-1)
+            then [Object [("n", Num (int_to_real 1)), ("b", True)]]
+            else Object [("n", Num (int_to_real x)), ("b", True)]::make_silly_json_object(x-1)
     in
-        Array (helper(i))
+        Array (make_silly_json_object(i))
     end
 
 (* histogram and historgram_for_field are provided, but they use your
