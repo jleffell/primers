@@ -74,6 +74,7 @@ val large_incident_reports_list =
 Control.Print.printLength := 20;
 
 (**** PUT PROBLEMS 1-8 HERE ****)
+(* Problem 1 *)
 fun make_silly_json (i : int) =
     let
         fun make_silly_json_object(x : int) =
@@ -83,6 +84,10 @@ fun make_silly_json (i : int) =
     in
         Array (make_silly_json_object(i))
     end
+
+(* Problem 2 *)
+fun     assoc(k, []) = NONE
+|       assoc(k, (k1,v1)::xs) = if k = k1 then SOME v1 else assoc(k,xs)
 
 (* histogram and historgram_for_field are provided, but they use your
    count_occurrences and string_values_for_field, so uncomment them
