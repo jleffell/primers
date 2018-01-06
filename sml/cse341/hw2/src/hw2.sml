@@ -89,6 +89,12 @@ fun make_silly_json (i : int) =
 fun     assoc(k, []) = NONE
 |       assoc(k, (k1,v1)::xs) = if k = k1 then SOME v1 else assoc(k,xs)
 
+(* Problem 3 *)
+fun dot x =
+    case x of
+        (Object j, f) => assoc(f, j)
+|       _ => NONE
+
 (* histogram and historgram_for_field are provided, but they use your
    count_occurrences and string_values_for_field, so uncomment them
    after doing earlier problems *)
