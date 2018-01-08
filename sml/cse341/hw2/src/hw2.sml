@@ -120,6 +120,9 @@ fun one_fields x =
         end
 |       _ => []
 
+(* Problem 5 *)
+fun no_repeats x =
+    length x = length (dedup x)
 
 (* histogram and historgram_for_field are provided, but they use your
    count_occurrences and string_values_for_field, so uncomment them
