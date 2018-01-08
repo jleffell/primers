@@ -95,6 +95,32 @@ fun dot x =
         (Object j, f) => assoc(f, j)
 |       _ => NONE
 
+(* Problem 4 *)
+(* )un one_fields x =
+    case x of
+        (Object j) =>
+        let
+            fun helper([],acc) = acc
+|               helper((a,b)::c, acc) = helper(c,a::acc)
+        in
+            helper(j, [])
+        end
+|       _ => [] *)
+
+fun one_fields x =
+    case x of
+        (Object j) =>
+        let
+            fun helper y =
+                case y of
+                    ([],acc) => acc
+|                   ((a,b)::c, acc) => helper(c,a::acc)
+        in
+            helper(j, [])
+        end
+|       _ => []
+
+
 (* histogram and historgram_for_field are provided, but they use your
    count_occurrences and string_values_for_field, so uncomment them
    after doing earlier problems *)
